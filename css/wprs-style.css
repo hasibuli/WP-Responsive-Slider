@@ -219,8 +219,11 @@
 	margin-left:0 !important;
 }
 .bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
-  bottom: -1px !important;
+  bottom: -10px !important;
 }
 .bx-wrapper{
 	overflow:hidden;
+}
+.bx-wrapper .bx-viewport {
+  margin-bottom: 25px;
 }
