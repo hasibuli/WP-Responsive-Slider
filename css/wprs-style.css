@@ -213,5 +213,14 @@
   margin: 0;
 }
 #wprs_slider{
-	margin-bottom:35px;
+	border:1px solid #eee;
+}
+.bxslider li{
+	margin-left:0 !important;
+}
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+  bottom: -1px !important;
+}
+.bx-wrapper{
+	overflow:hidden;
 }
