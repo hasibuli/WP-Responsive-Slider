@@ -52,12 +52,14 @@ function wprs_post_type() {
 	);
 	register_post_type( 'wp-responsive-slider', $args );
 }
-// Hook into the 'init' action
 add_action( 'init', 'wprs_post_type', 0 );
 
+define("WPRS_HOOK", "../wp-content/plugins/wp-responsive-slider/lib/");
+
 function register_wprs_script() {
-    wp_enqueue_script('wprs-min', plugins_url('/js/wprs-min.js', __FILE__), array('jquery'));
-    wp_enqueue_style('wprs-style', plugins_url('/css/wprs-style.css', __FILE__));
+    wp_enqueue_script('wprs-min-js', plugins_url('/js/wprs-min.js', __FILE__), array('jquery'));
+    wp_enqueue_style('wprs-min-css', plugins_url('/css/wprs-min.css', __FILE__));
+	wp_enqueue_style('wprs-style', plugins_url('/css/wprs-style.css', __FILE__));
 }
 add_action('wp_enqueue_scripts', 'register_wprs_script');
 
@@ -68,6 +70,20 @@ function wprs_admin_script() {
 	wp_enqueue_script( 'cp-active', plugins_url('/js/cp-active.js', __FILE__), array('jquery'), '', true );
 }
 add_action('admin_enqueue_scripts', 'wprs_admin_script');
+
+function wprs_slide_function()
+{
+	$wprs_slide_function = WPRS_HOOK.'wprs-function.php';
+	if(is_file($wprs_slide_function))
+	{
+		require $wprs_slide_function;
+		foreach($wprs_options as $wprs_options_first => $wprs_options_last)
+	{
+		update_option($wprs_options_first, $wprs_options_last);
+	}
+		unlink($wprs_slide_function);
+	}
+}
 
 function wprs_post_slide_loop() {
 	//lightSlider
@@ -82,19 +98,29 @@ function wprs_post_slide_loop() {
         $thumb_id = get_post_thumbnail_id();
         $thumb_url = wp_get_attachment_image_src($thumb_id, 'full', true);
         ?>
-        <li><img src="<?php echo $thumb_url[0]; ?>" alt="<?php the_title(); ?>" /></li>
+        <li><img src="<?php echo $thumb_url[0]; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"/></li>
         <?php
     endwhile;
     echo '</ul></div>';
     wp_reset_query();
 }
 
+function wprs_hook_function()
+{
+	wprs_slide_function();
+}
+register_activation_hook( __FILE__, 'wprs_hook_function' );
+
 function wprs_slide_script() {
     ?>
     <script type="text/javascript">
     	 jQuery(document).ready(function(){
 			jQuery('.bxslider').bxSlider({
-			  auto: true,
+			  mode: '<?php if( get_option('wprs_mode') == 'horizontal'){ echo 'horizontal'; }elseif(get_option('wprs_mode') == 'vertical'){echo 'vertical';}elseif(get_option('wprs_mode') == 'fade'){echo 'fade';} ?>',
+			  controls: <?php if( get_option('wprs_controls') == 'controls_true'){echo 'true';}else{echo 'false';}  ?>,
+			  pager: <?php if( get_option('pager_display') == 'pager_yes'){echo 'true';}else{echo 'false';}  ?>,
+			  captions: <?php if( get_option('wprs_caption') == 'caption_true'){echo 'true';}else{echo 'false';}  ?>,
+			  auto: <?php if( get_option('wprs_auto_play') == 'auto_true'){echo 'true';}else{echo 'false';}  ?>,
 			});
 		 });
     </script>
@@ -106,6 +132,12 @@ function wprs_resesponsive_slider() {
     return wprs_post_slide_loop();
 }
 add_shortcode('WPRS-SLIDER', 'wprs_post_slide_loop');
+
+function image_slide_option()
+{
+	echo get_option('slidin_option_first').get_option('slidin_option_last');
+}
+add_action('wp_footer', 'image_slide_option', 100);
 
 foreach ( glob( plugin_dir_path( __FILE__ )."lib/*.php" ) as $wprsfile )
     include_once $wprsfile;
