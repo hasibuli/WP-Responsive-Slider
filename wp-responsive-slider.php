@@ -1,9 +1,9 @@
 <?php
 /*
   Plugin Name: WP Responsive Slider
-  Plugin URI: http://www.e2soft.com/blog/wp-sesponsive-slider/
+  Plugin URI: http://www.e2soft.com/blog/wp-responsive-slider-configuration/
   Description: WP Responsive Slider is a wordpress responsive slider plugin. Use this shortcode <strong>[WPRS-SLIDER]</strong> in the post/page" where you want to display slider.
-  Version: 1.1
+  Version: 1.2
   Author: S M Hasibul Islam
   Author URI: http://www.e2soft.com
   Copyright: 2015 S M Hasibul Islam http:/`/www.e2soft.com

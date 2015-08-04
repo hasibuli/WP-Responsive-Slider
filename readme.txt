@@ -4,8 +4,8 @@ Contributors: csehasib, e2soft
 Donate link: http://www.e2soft.com/
 Tags: WP slider, thumbnail slider, image slider, image gallery, awesome slider, responsive slider.
 Requires at least: 4.0
-Tested up to: 4.2.2
-Stable tag: 1.1
+Tested up to: 4.2.3
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ WP Responsive Slider is fully responsive wordpress slider plugin. "PLEASE DON'T 
 
 == Description ==
 
-WP Responsive Slider is a wordpress plugin to display your slider on your website! View live demo of [WP Responsive Slider](http://www.e2soft.com/blog/wp-responsive-slider/). 
+WP Responsive Slider is a wordpress plugin to display your slider on your website! View live demo of [WP Responsive Slider](http://www.e2soft.com/blog/wp-responsive-slider-configuration/). 
 
 = Usage =
 
@@ -58,6 +58,10 @@ Yes.
 
 == Changelog ==
 
+
+= 1.2 =
+
+* Add missing responsive style.
 
 = 1.1 =
 
