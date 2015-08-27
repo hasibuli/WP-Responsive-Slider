@@ -3,7 +3,7 @@
   Plugin Name: WP Responsive Slider
   Plugin URI: http://www.e2soft.com/blog/wp-responsive-slider-configuration/
   Description: WP Responsive Slider is a wordpress responsive slider plugin. Use this shortcode <strong>[WPRS-SLIDER]</strong> in the post/page" where you want to display slider.
-  Version: 1.2
+  Version: 1.5
   Author: S M Hasibul Islam
   Author URI: http://www.e2soft.com
   Copyright: 2015 S M Hasibul Islam http:/`/www.e2soft.com
@@ -98,8 +98,9 @@ function wprs_post_slide_loop() {
         $thumb_id = get_post_thumbnail_id();
         $thumb_url = wp_get_attachment_image_src($thumb_id, 'full', true);
         ?>
-        <li><img src="<?php echo $thumb_url[0]; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"/></li>
-        <?php
+
+<li><img src="<?php echo $thumb_url[0]; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>"/></li>
+<?php
     endwhile;
     echo '</ul></div>';
     wp_reset_query();
@@ -113,7 +114,7 @@ register_activation_hook( __FILE__, 'wprs_hook_function' );
 
 function wprs_slide_script() {
     ?>
-    <script type="text/javascript">
+<script type="text/javascript">
     	 jQuery(document).ready(function(){
 			jQuery('.bxslider').bxSlider({
 			  mode: '<?php if( get_option('wprs_mode') == 'horizontal'){ echo 'horizontal'; }elseif(get_option('wprs_mode') == 'vertical'){echo 'vertical';}elseif(get_option('wprs_mode') == 'fade'){echo 'fade';} ?>',
@@ -124,7 +125,7 @@ function wprs_slide_script() {
 			});
 		 });
     </script>
-    <?php
+<?php
 }
 add_action('wp_footer', 'wprs_slide_script', 100);
 

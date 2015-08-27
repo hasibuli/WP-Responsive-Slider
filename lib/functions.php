@@ -37,34 +37,36 @@ function wprs_page_function() {
         <td><select name="wprs_mode" id="wprs_mode">
             <option value="horizontal" <?php if( get_option('wprs_mode') == 'horizontal'){ echo 'selected="selected"'; } ?>>Horizontal</option>
             <option value="vertical" <?php if( get_option('wprs_mode') == 'vertical'){ echo 'selected="selected"'; } ?>>Vertical</option>
-             <option value="fade" <?php if( get_option('wprs_mode') == 'fade'){ echo 'selected="selected"'; } ?>>Fade</option>
-        </select></td>
+            <option value="fade" <?php if( get_option('wprs_mode') == 'fade'){ echo 'selected="selected"'; } ?>>Fade</option>
+          </select></td>
       </tr>
-      <th><label for="wprs_auto_play">Auto Play</label></th>
+      
+        <th><label for="wprs_auto_play">Auto Play</label></th>
         <td><select name="wprs_auto_play" id="wprs_auto_play">
             <option value="auto_true" <?php if( get_option('wprs_auto_play') == 'auto_true'){ echo 'selected="selected"'; } ?>>Yes</option>
             <option value="auto_false" <?php if( get_option('wprs_auto_play') == 'auto_false'){ echo 'selected="selected"'; } ?>>No</option>
-        </select></td>
+          </select></td>
       </tr>
-      <th><label for="wprs_controls">Display Controls</label></th>
+      
+        <th><label for="wprs_controls">Display Controls</label></th>
         <td><select name="wprs_controls" id="wprs_controls">
             <option value="controls_true" <?php if( get_option('wprs_controls') == 'controls_true'){ echo 'selected="selected"'; } ?>>Yes</option>
             <option value="controls_false" <?php if( get_option('wprs_controls') == 'controls_false'){ echo 'selected="selected"'; } ?>>No</option>
-        </select></td>
+          </select></td>
       </tr>
       <tr>
         <th><label for="wprs_caption">Display Captions</label></th>
         <td><select name="wprs_caption" id="wprs_caption">
             <option value="caption_true" <?php if( get_option('wprs_caption') == 'caption_true'){ echo 'selected="selected"'; } ?>>Yes</option>
             <option value="caption_false" <?php if( get_option('wprs_caption') == 'caption_false'){ echo 'selected="selected"'; } ?>>No</option>
-        </select></td>
+          </select></td>
       </tr>
       <tr>
         <th><label for="pager_display">Pager Display</label></th>
         <td><select name="pager_display" id="pager_display">
             <option value="pager_yes" <?php if( get_option('pager_display') == 'pager_yes'){ echo 'selected="selected"'; } ?>>Yes</option>
             <option value="pager_no" <?php if( get_option('pager_display') == 'pager_no'){ echo 'selected="selected"'; } ?>>No</option>
-        </select></td>
+          </select></td>
       </tr>
       <tr>
         <th><label for="wprs_pager_color">Pagination Color</label></th>
@@ -84,29 +86,29 @@ function wprs_page_function() {
 </div>
 </div>
 <div id="nhtRight">
-    <div class="nhtWidget">
+  <div class="nhtWidget">
     <h3>Need Responsive Web Design?</h3>
-	<?php
+    <?php
 	 $urls_total = array("http://www.e2soft.com/web-design/","http://www.e2soft.com/web-development/","http://www.e2soft.com/web-hosting/","http://www.e2soft.com/portfolio");
 	$random_urls = array_rand($urls_total);
 	?>
-	<iframe class="border_1" src="<?php echo $urls_total["$random_urls"]; ?>" width="320" height="300">
-	</iframe>
-	</div>
+    <iframe class="border_1" src="<?php echo $urls_total["$random_urls"]; ?>"> </iframe>
+  </div>
   <div class="clrFix"></div>
-  <div class="nhtWidget">
-  		<a href="http://www.e2soft.com" title="Web Design Company" target="_blank"><img src="<?php bloginfo('url' ); echo"/wp-content/plugins/wp-responsive-slider/img/responsive-web-design.png"; ?>" alt="Web Design Company" /></a>
-        
-<p><h3>Donate and support the development.</h3> With your help I can make Simple Fields even better! $5, $10, $100 – any amount is fine! :)</p>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="82C6LTLMFLUFW">
-<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-</form>
-
+  <div class="nhtWidget"> <a href="http://www.e2soft.com" title="Web Design Company" target="_blank"><img src="<?php bloginfo('url' ); echo"/wp-content/plugins/wp-responsive-slider/img/responsive-web-design.png"; ?>" alt="Web Design Company" /></a>
+    <p>
+    
+    <h3>Donate and support the development.</h3>
+    With your help I can make Simple Fields even better! $5, $10, $100 – any amount is fine! :)
+    </p>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="82C6LTLMFLUFW">
+      <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+      <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+    </form>
   </div>
-  </div>
+</div>
 <div class="clrFix"></div>
 </div>
 <div class="clrFix"></div>

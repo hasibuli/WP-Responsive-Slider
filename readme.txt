@@ -4,8 +4,8 @@ Contributors: csehasib, e2soft
 Donate link: http://www.e2soft.com/
 Tags: WP slider, thumbnail slider, image slider, image gallery, awesome slider, responsive slider.
 Requires at least: 4.0
-Tested up to: 4.2.3
-Stable tag: 1.2
+Tested up to: 4.3
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +58,10 @@ Yes.
 
 == Changelog ==
 
+
+= 1.5 =
+
+* Compatibility with wp version 4.3
 
 = 1.2 =
 
