@@ -1,22 +1,13 @@
-﻿=== WP Responsive Slider ===
-
-Contributors: csehasib, e2soft
-Donate link: http://www.e2soft.com/
-Tags: WP slider, thumbnail slider, image slider, image gallery, awesome slider, responsive slider.
-Requires at least: 4.0
-Tested up to: 4.3
-Stable tag: 1.5
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+#=== WP Responsive Slider ===
 
 
 WP Responsive Slider is a wordpress plugin to display your slider on your website! View live demo of [WP Responsive Slider](http://www.e2soft.com/blog/wp-responsive-slider-configuration/). 
 
-= Usage =
+#= Usage =
 
 * Go to your Dashboard after installation and navigate to "WPRS Slider >> Slider Settings" to configure the Slider.
  
-= Features =
+#= Features =
 
   * Very easy to install and configure
   * Slides can contain images, video, or HTML content
@@ -30,7 +21,7 @@ WP Responsive Slider is a wordpress plugin to display your slider on your websit
   * Auto Slider Control
   * Browser support: Firefox, Chrome, Safari, iOS, Android, IE7+
 
-== Installation ==
+#== Installation ==
 
 * Upload `wp-responsive-slider` to the `/wp-content/plugins/` directory
 * Activate the plugin through the 'Plugins' menu in WordPress
@@ -41,7 +32,7 @@ in the template code or  <strong>[WPRS-SLIDER]</strong> in the post/page" where 
 * "PLEASE DON'T USE VARIOUS SIZE IMAGE ON SLIDER.  USE SAME SIZE IMAGE."
 
 
-== Changelog ==
+#== Changelog ==
 
 
 = 1.5 =
